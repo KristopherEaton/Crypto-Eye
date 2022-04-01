@@ -74,10 +74,10 @@ function App() {
           );
         })}
       </div>
-      <div class="viewport">
+      {/* <div class="viewport"> */}
         
         {/* {marketdata.} */}
-      </div>
+      {/* </div> */}
     </div>
   );
 }
