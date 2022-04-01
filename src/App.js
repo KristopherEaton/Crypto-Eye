@@ -39,7 +39,7 @@ function App() {
   return (
     <div className="coin-app">
       <div className="coin-search">
-        {<h1 className="coin-text">What currency are you looking for:</h1>}
+        {<h1 className="coin-text">Currency Search:</h1>}
         <form action="">
           <input
             type="text"
