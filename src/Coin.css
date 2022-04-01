@@ -5,11 +5,12 @@
 .coin-row{
   display: flex;
   flex-direction: row;
-  justify-items: start;
+  
   align-items: center;
+  text-align: left;
   height: 80px;
   border-bottom: 1px solid #d7d7d7;
-  width: 900px;
+  width: 90%;
 }
 .coin{
   display: flex;

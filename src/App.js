@@ -8,10 +8,12 @@ function App() {
   const [coins, setCoins] = useState([]);
   const [marketdata, setMarketdata] = useState([]);
   const [search, setSearch] = useState("");
+  const current = new Date();
+  const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
   useEffect(() => {
     axios
       .get(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
+        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=1000&page=1&sparkline=false"
       )
       .then((res) => {
         setCoins(res.data);
@@ -38,6 +40,10 @@ function App() {
   );
   return (
     <div className="coin-app">
+      <div>
+       
+        <img src={ require('./images/AppTitle.png')} />
+      </div>
       <div className="coin-search">
         {<h1 className="coin-text">Currency Search:</h1>}
         <form action="">
@@ -50,12 +56,10 @@ function App() {
         </form>
       </div>
       <div className="viewport" style={{marginBottom: "20px"}}>
-        <table>
-          <tr className="coin-row">
-            <td className="coin"><h2>Currency</h2></td>
-            <td className="coin-data" style={{paddingLeft: "5%"}}><h2>Price</h2></td>
-            <td className="coin-data" style={{paddingLeft: "15%"}}><h2>Price Change</h2></td>
-            <td className="coin-data" style={{paddingLeft: "20%"}}><h2>Market Cap</h2></td>
+        <table className="header_table">
+          <tr className="title-row">
+            <td className="title_column" ><h2>TOP 1000 Currencies On Market</h2></td>
+            <td className="date">Date: {date}</td>
           </tr>
         </table>
       </div>
